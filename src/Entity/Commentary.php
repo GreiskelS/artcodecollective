@@ -40,6 +40,11 @@ class Commentary
         return $this;
     }
 
+    public function  __toString()
+    {
+        return $this->Commentary;
+    }
+
     public function getDate(): ?\DateTimeInterface
     {
         return $this->Date;

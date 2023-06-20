@@ -36,6 +36,11 @@ class Artist
         $this->fk_Artwork = new ArrayCollection();
     }
 
+    public function  __toString()
+    {
+        return $this->Description;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

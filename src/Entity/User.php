@@ -17,6 +17,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column]
+    private ?string $FullName = null;
+
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
@@ -39,8 +42,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->artworks = new ArrayCollection();
         $this->commentaries = new ArrayCollection();
+       
     }
-
+  
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +89,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->roles = $roles;
 
         return $this;
+    }
+
+    public function  __toString()
+    {
+        return $this->roles;
     }
 
     /**
