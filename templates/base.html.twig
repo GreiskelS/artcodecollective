@@ -9,8 +9,37 @@
 
         {% block javascripts %}
         {% endblock %}
+
+         {{
+            render(controller(
+                'App\\Controller\\partes\\Head::head_render',
+                { 'max': 3 }
+            ))
+        }}
+
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+        {{
+            render(controller(
+                'App\\Controller\\partes\\Header::header_render',
+                { 'max': 3 }
+            ))
+        }}
+
+        {% block body %} 
+
+
+
+            <a href="/templates/templatemo_559_zay_shop/index.html.twig">Hola</a>
+ 
+        {% endblock %}
+
+        {{
+            render(controller(
+                'App\\Controller\\partes\\Footer::footer_render',
+                { 'max': 3 }
+            ))
+        }}
     </body>
 </html>
