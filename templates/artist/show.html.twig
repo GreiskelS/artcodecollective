@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artist{% endblock %}
+
+{% block body %}
+    <h1>Artist</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ artist.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ artist.Title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ artist.Description }}</td>
+            </tr>
+            <tr>
+                <th>Authors</th>
+                <td>{{ artist.Authors }}</td>
+            </tr>
+            <tr>
+                <th>Medium</th>
+                <td>{{ artist.Medium }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_artist_index') }}">back to list</a>
+
+    <a href="{{ path('app_artist_edit', {'id': artist.id}) }}">edit</a>
+
+    {{ include('artist/_delete_form.html.twig') }}
+{% endblock %}
